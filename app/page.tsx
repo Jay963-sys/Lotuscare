@@ -8,6 +8,28 @@ import { AssessmentBand } from "@/components/Sections";
 import { ServiceRow } from "@/components/Cards";
 import { site, services, careerTracks } from "@/content/site";
 
+/* Small drawn arrow used by editorial links — replaces the ↗ glyph. */
+function LinkArrow() {
+  return (
+    <svg
+      className="editorial-link-arrow"
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M7 17 17 7M9 7h8v8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   const nursing = services.filter((s) => s.group === "Home Nursing");
   const homecare = services.filter((s) => s.group === "Home Care");
@@ -23,26 +45,19 @@ export default function HomePage() {
 
         <Container className="relative grid items-center gap-12 py-12 sm:py-16 lg:min-h-[calc(100vh-4.75rem)] lg:grid-cols-[0.94fr_1.06fr] lg:gap-16 lg:py-20">
           <div className="relative z-10">
-            <Reveal>
-              <div className="hero-kicker">
-                <span className="hero-kicker-dot" />
-                <span>Home health care · Chicago</span>
-              </div>
-            </Reveal>
-
             <Reveal delay={70}>
               <h1 className="hero-title mt-7">
-                Care that feels
+                Staying home shouldn&apos;t
                 <br />
-                <span className="hero-title-accent">like home.</span>
+                <span className="hero-title-accent">mean managing alone.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={140}>
               <p className="hero-copy mt-7 max-w-xl">
-                Skilled nursing and compassionate home care that helps your
-                loved ones live safely, comfortably, and independently in the
-                place they know best.
+                Skilled nursing and everyday home care for Chicago families so a
+                parent or partner can stay in the home they know, with the right
+                support close by.
               </p>
             </Reveal>
 
@@ -71,9 +86,7 @@ export default function HomePage() {
                     Trusted by more than <strong>220 Chicago families</strong>.
                   </p>
 
-                  <span>
-                    Skilled nurses. Thoughtful caregivers. One connected team.
-                  </span>
+                  <span>The same team, from the first visit onward.</span>
                 </div>
               </div>
             </Reveal>
@@ -97,17 +110,27 @@ export default function HomePage() {
               <div className="hero-photo-caption">
                 <span className="hero-caption-line" />
                 <span>
-                  Compassionate care,
+                  In their own home,
                   <br />
-                  in familiar surroundings.
+                  on their own terms.
                 </span>
               </div>
 
               <div className="hero-floating-card">
-                <span className="hero-floating-icon">✦</span>
+                <span className="hero-floating-icon">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M12 3c2.7 3.1 4 6.2 4 9a4 4 0 1 1-8 0c0-2.8 1.3-5.9 4-9Z" />
+                  </svg>
+                </span>
 
                 <div>
-                  <strong>Care begins with listening.</strong>
+                  <strong>It starts with a home visit.</strong>
                   <span>Free, no-obligation assessment</span>
                 </div>
               </div>
@@ -140,20 +163,20 @@ export default function HomePage() {
             <p className="eyebrow mb-6">Who we are</p>
 
             <h2 className="mission-title">
-              The best care doesn't just treat a need.
-              <em> It cares for the whole person.</em>
+              Built around the person,
+              <em> not the paperwork.</em>
             </h2>
 
             <p className="mt-7 max-w-xl text-lg leading-8 text-ink-700">
               LotusCare provides skilled nursing in the home by licensed
               personnel, alongside non-medical care for everyday living. Every
-              plan is shaped around one person's needs and delivered by people
-              who are sensitive to them.
+              plan is shaped around one person&apos;s needs and delivered by
+              people who are sensitive to them.
             </p>
 
             <Link href="/about" className="editorial-link mt-8">
               <span>More about our mission</span>
-              <span aria-hidden>↗</span>
+              <LinkArrow />
             </Link>
           </Reveal>
 
@@ -174,9 +197,9 @@ export default function HomePage() {
               <div className="mission-note">
                 <span>01</span>
                 <p>
-                  Care designed around
+                  Care built around
                   <br />
-                  real life.
+                  one person&apos;s day.
                 </p>
               </div>
 
@@ -206,15 +229,12 @@ export default function HomePage() {
             <h2 className="display-lg mt-5">
               Two kinds of care.
               <br />
-              <span className="text-blush-600">
-                One standard of compassion.
-              </span>
+              <span className="text-blush-600">One team behind both.</span>
             </h2>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-700">
-              From clinical support to the everyday moments that make a house
-              feel like home, our care is shaped around the person — not just
-              the task.
+              From a nurse after a hospital stay to a hand with the everyday,
+              the care is matched to the person not just the task.
             </p>
           </Reveal>
 
@@ -257,14 +277,14 @@ export default function HomePage() {
                 <span className="eyebrow text-blush-200">Skilled support</span>
 
                 <h3>
-                  Clinical expertise,
+                  The clinical parts,
                   <br />
-                  delivered with humanity.
+                  done properly.
                 </h3>
 
                 <p>
-                  Professional care should never feel cold. We combine
-                  experience and clinical skill with genuine attentiveness.
+                  Wound care, medications, recovery after surgery handled by
+                  licensed nurses who explain what they&apos;re doing, and why.
                 </p>
               </div>
 
@@ -310,19 +330,19 @@ export default function HomePage() {
                 <span className="eyebrow">Everyday care</span>
 
                 <h3>
-                  Sometimes the smallest
+                  Independence lives
                   <br />
-                  moments matter most.
+                  in the everyday.
                 </h3>
 
                 <p>
-                  From daily routines to companionship, we're here to make life
-                  at home feel easier, safer, and more comfortable.
+                  Meals, bathing, a walk to the mailbox, a bit of company the
+                  ordinary things that keep someone in their own home.
                 </p>
 
                 <Link href="/services" className="editorial-link mt-6">
                   <span>Explore our services</span>
-                  <span aria-hidden>↗</span>
+                  <LinkArrow />
                 </Link>
               </div>
             </div>
@@ -342,8 +362,8 @@ export default function HomePage() {
               </div>
 
               <div className="mini-photo-caption">
-                <span>Thoughtful care</span>
-                <strong>Made personal.</strong>
+                <span>Familiar faces</span>
+                <strong>Week after week.</strong>
               </div>
             </div>
           </Reveal>
@@ -353,8 +373,8 @@ export default function HomePage() {
               <p>Not sure what kind of support your family needs?</p>
 
               <Link href="/contact" className="editorial-link">
-                <span>Let's figure it out together</span>
-                <span aria-hidden>↗</span>
+                <span>Let&apos;s figure it out together</span>
+                <LinkArrow />
               </Link>
             </div>
           </Reveal>
@@ -373,10 +393,10 @@ export default function HomePage() {
             </div>
 
             <h2 className="display-lg mt-5">
-              Getting started should feel
+              Getting started
               <span className="font-display italic text-blush-600">
                 {" "}
-                simple.
+                without the runaround.
               </span>
             </h2>
 
@@ -496,13 +516,12 @@ export default function HomePage() {
 
                     <blockquote className="testimonial-quote">
                       I fell in love with LotusCare right from the free
-                      assessment. They were so detailed about my mother's care —
-                      and so kind about it.
+                      assessment. They were so detailed about my mother&apos;s
+                      care and so kind about it.
                     </blockquote>
 
                     <div className="testimonial-author">
                       <span className="testimonial-author-line" />
-
                       <div>
                         <strong>Kate W.</strong>
                         <span>Daughter of a LotusCare client</span>
@@ -528,8 +547,8 @@ export default function HomePage() {
 
               <div>
                 <p>
-                  “My caregiver was so passionate about me, and always ready to
-                  help in a professional way.”
+                  &ldquo;My caregiver was so passionate about me, and always
+                  ready to help in a professional way.&rdquo;
                 </p>
 
                 <span>Tami W. · Client</span>
@@ -537,8 +556,8 @@ export default function HomePage() {
 
               <div>
                 <p>
-                  “I'll keep telling anyone who cares to listen about the care
-                  they gave our family.”
+                  &ldquo;I&apos;ll keep telling anyone who cares to listen about
+                  the care they gave our family.&rdquo;
                 </p>
 
                 <span>James C. · Family member</span>
@@ -546,7 +565,7 @@ export default function HomePage() {
 
               <div className="testimonial-secondary-note">
                 <span>Good care is personal.</span>
-                <span>And people remember how you made them feel.</span>
+                <span>You remember the people who show up.</span>
               </div>
             </div>
           </Reveal>
@@ -572,7 +591,7 @@ export default function HomePage() {
 
               <div className="careers-photo-label">
                 <span>LOTUSCARE</span>
-                <strong>Good people. Good care.</strong>
+                <strong>The people behind the care.</strong>
               </div>
             </div>
           </Reveal>
@@ -585,15 +604,15 @@ export default function HomePage() {
               </div>
 
               <h2 className="display-lg mt-5">
-                Compassionate people
+                The people are
                 <br />
-                <span className="text-blush-600">make LotusCare.</span>
+                <span className="text-blush-600">the whole service.</span>
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-ink-700">
-                Build a career that changes lives — on a schedule that works for
-                you. We're always looking for people who lead with kindness,
-                professionalism, and heart.
+                Build a career that actually matters, on a schedule that fits
+                your life. If you&apos;re dependable and kind, we&apos;d like to
+                talk.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2.5">

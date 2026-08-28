@@ -16,16 +16,16 @@ export default function CareersPage() {
     <>
       <PageHero
         eyebrow="Careers"
-        title="Find a career with heart."
-        lede="Are you compassionate and eager to make a difference in people's lives? Come join us — caregiver, nurse or specialist, pursue your passion at LotusCare."
+        title="Care work worth staying for."
+        lede="We're hiring caregivers, nurses and coordinators across Chicago. If you're dependable, kind, and good with people, we'd like to meet you."
       />
 
       <section className="py-16 lg:py-20">
         <Container className="max-w-3xl">
           <Reveal>
             <p className="mission-quote text-[clamp(1.4rem,2.6vw,2rem)]">
-              We hire for kindness first &mdash; <em>the skills, we&apos;ll grow
-              together.</em>
+              We hire for kindness first.{" "}
+              <em>the skills, we&apos;ll grow together.</em>
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -47,8 +47,8 @@ export default function CareersPage() {
             <p className="eyebrow">Apply now</p>
             <h2 className="display-md mt-4">Tell us about yourself.</h2>
             <p className="mt-4 text-ink-700">
-              Complete the form below and our team will be in touch if there&apos;s
-              a fit. Every application is read by a real person.
+              Complete the form below and our team will be in touch if
+              there&apos;s a fit. Every application is read by a real person.
             </p>
           </Reveal>
           <Reveal delay={120} className="mt-10">

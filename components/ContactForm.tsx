@@ -46,6 +46,15 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-5" noValidate>
+      {/* honeypot — hidden from people, bots fill it */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+      />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="name" required>
@@ -62,7 +71,13 @@ export function ContactForm() {
         <Label htmlFor="email" required>
           Email
         </Label>
-        <Input id="email" name="email" type="email" required autoComplete="email" />
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+        />
       </div>
       <div>
         <Label htmlFor="message" required>

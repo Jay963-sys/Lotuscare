@@ -5,17 +5,17 @@
  * template: copy the project, replace THIS file's values, and override the
  * palette tokens in app/globals.css. No component edits required.
  *
- * ⚠️ All NAP values below are marked TODO — the old LotusCare site listed
- * three phone numbers and two addresses. Confirm the correct set with the
- * client before launch (also fixes Google Business / local SEO).
+ * IMPORTANT: All NAP values below are marked TODO — the old LotusCare site
+ * listed three phone numbers and two addresses. Confirm the correct set with
+ * the client before launch (also fixes Google Business / local SEO).
  */
 
 export const site = {
   name: "LotusCare",
   legalName: "LotusCare Services, LLC",
-  tagline: "Dedicated to providing the highest quality home health care.",
+  tagline: "Care beyond measure.",
   description:
-    "LotusCare provides skilled home nursing and compassionate non-medical home care across Chicago — helping your loved ones live safely and independently at home.",
+    "LotusCare provides skilled home nursing and non-medical home care across Chicago helping your loved ones live safely and independently at home.",
 
   // --- Contact / NAP — TODO: CONFIRM WITH CLIENT ---
   phone: "(708) 793-2159",
@@ -62,42 +62,42 @@ export const services: Service[] = [
     title: "Rehabilitative Care",
     group: "Home Nursing",
     blurb:
-      "Licensed nurses deliver curative and rehabilitative procedures at home, coordinating the plan of care with your family and physicians.",
+      "Recovery care at home from licensed nurses wound care, mobility work, and coordination with your family and physicians.",
   },
   {
     slug: "infusion-therapy",
     title: "Infusion Therapy",
     group: "Home Nursing",
     blurb:
-      "Safe, monitored in-home infusion administered by skilled nursing personnel — hospital-grade care in familiar surroundings.",
+      "In-home infusion given and monitored by skilled nurses hospital-grade care, in familiar surroundings.",
   },
   {
     slug: "surgical-aftercare",
     title: "Surgical Aftercare",
     group: "Home Nursing",
     blurb:
-      "Attentive post-operative support and wound care that helps recovery happen where people heal best: at home.",
+      "Post-operative support and wound care at home, so recovery happens somewhere restful not a hospital ward.",
   },
   {
     slug: "private-duty-care",
     title: "Private Duty Care",
     group: "Home Care",
     blurb:
-      "One-to-one companionship and assistance tailored to the day-to-day needs of your loved one.",
+      "A dedicated caregiver, one-to-one relationship, steady company and a helping hand through the day.",
   },
   {
     slug: "personal-care",
     title: "Personal Care",
     group: "Home Care",
     blurb:
-      "Dignified help with bathing, dressing, mobility and daily living — delivered with warmth and respect.",
+      "Respectful help with bathing, dressing, mobility and daily living handled with dignity.",
   },
   {
     slug: "homemaking",
     title: "Homemaking",
     group: "Home Care",
     blurb:
-      "Light housekeeping, meal preparation and errands that keep the home safe, comfortable and independent.",
+      "Meals, light housekeeping and errands that keep home safe, tidy and easy to live in.",
   },
 ];
 
@@ -127,17 +127,20 @@ export const careerTracks = [
   {
     id: "caregiving",
     title: "Caregiving",
-    blurb: "Provide quality home care to clients — on a schedule that works for you.",
+    blurb:
+      "Support clients with everyday care on a schedule that fits your life.",
   },
   {
     id: "nursing",
     title: "Nursing",
-    blurb: "Bring your skilled nursing abilities to clients who need them most.",
+    blurb:
+      "Put your skilled-nursing training where it's felt most: in someone's own home.",
   },
   {
     id: "administrative",
     title: "Administrative",
-    blurb: "Support the team behind the care with your organisational talent.",
+    blurb:
+      "Keep care running smoothly scheduling, coordination and the work behind the scenes.",
   },
 ] as const;
 

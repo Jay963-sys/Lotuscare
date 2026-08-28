@@ -39,7 +39,7 @@ export function AssessmentBand() {
 
               <p>
                 Tell us about your loved one and we'll design a thoughtful care
-                plan around their needs — usually within one business day.
+                plan around their needs usually within one business day.
               </p>
 
               <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">

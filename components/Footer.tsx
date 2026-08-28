@@ -1,24 +1,50 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
-import { LotusMark } from "./LotusMark";
 import { site } from "@/content/site";
+
+const socialLabels: Record<string, string> = {
+  facebook: "Facebook",
+  instagram: "Instagram",
+  linkedin: "LinkedIn",
+};
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const socials = Object.entries(site.socials).filter(([, url]) => url);
+
   return (
     <footer className="mt-24 bg-pine-900 text-sage-100">
       <Container className="py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5">
-              <LotusMark className="h-9 w-9 text-sage-200" />
-              <span className="font-display text-[1.35rem] font-semibold text-white">
-                {site.name}
-              </span>
-            </div>
-            <p className="mt-4 max-w-xs text-[0.95rem] leading-relaxed text-sage-200/85">
+            <Image
+              src="/lotuscare-lockup-white.png"
+              alt={site.name}
+              width={662}
+              height={176}
+              className="h-10 w-auto"
+            />
+            <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-sage-200/85">
               {site.tagline}
             </p>
+
+            {socials.length > 0 && (
+              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[0.9rem]">
+                {socials.map(([key, url]) => (
+                  <li key={key}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sage-100/85 hover:text-white"
+                    >
+                      {socialLabels[key] ?? key}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div>
@@ -33,7 +59,10 @@ export function Footer() {
                 { href: "/contact", label: "Contact" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sage-100/85 hover:text-white">
+                  <Link
+                    href={l.href}
+                    className="text-sage-100/85 hover:text-white"
+                  >
                     {l.label}
                   </Link>
                 </li>

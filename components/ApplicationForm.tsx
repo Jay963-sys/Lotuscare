@@ -38,8 +38,8 @@ export function ApplicationForm() {
       <div className="rounded-2xl bg-sage-50 p-8 text-center ring-1 ring-pine-900/8">
         <h3 className="display-sm">Application received.</h3>
         <p className="mt-2 text-ink-700">
-          Thank you for your interest in joining LotusCare. Our team reviews every
-          application and will reach out if there's a fit.
+          Thank you for your interest in joining LotusCare. Our team reviews
+          every application and will reach out if there's a fit.
         </p>
       </div>
     );
@@ -47,6 +47,15 @@ export function ApplicationForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-5" noValidate>
+      {/* honeypot — hidden from people, bots fill it */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+      />
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="name" required>
@@ -58,7 +67,13 @@ export function ApplicationForm() {
           <Label htmlFor="phone" required>
             Phone
           </Label>
-          <Input id="phone" name="phone" type="tel" required autoComplete="tel" />
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+          />
         </div>
       </div>
 
@@ -66,7 +81,13 @@ export function ApplicationForm() {
         <Label htmlFor="email" required>
           Email
         </Label>
-        <Input id="email" name="email" type="email" required autoComplete="email" />
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+        />
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -107,7 +128,11 @@ export function ApplicationForm() {
         </div>
         <div>
           <Label htmlFor="credentials">Certifications / license</Label>
-          <Input id="credentials" name="credentials" placeholder="e.g. CNA, RN, LPN" />
+          <Input
+            id="credentials"
+            name="credentials"
+            placeholder="e.g. CNA, RN, LPN"
+          />
         </div>
       </div>
 

@@ -12,6 +12,7 @@ const Schema = z.object({
   experience: z.string().max(200).optional().or(z.literal("")),
   credentials: z.string().max(200).optional().or(z.literal("")),
   message: z.string().max(4000).optional().or(z.literal("")),
+  company: z.string().optional(),
 });
 
 export async function POST(req: Request) {
@@ -29,21 +30,29 @@ export async function POST(req: Request) {
       { status: 422 },
     );
   }
+
   const v = parsed.data;
 
+  if (v.company) {
+    return NextResponse.json({ ok: true });
+  }
+
   try {
-    if (db) {
-      await db.insert(schema.applications).values({
-        name: v.name,
-        email: v.email,
-        phone: v.phone,
-        position: v.position,
-        employmentType: v.employmentType || null,
-        experience: v.experience || null,
-        credentials: v.credentials || null,
-        message: v.message || null,
-      });
+    if (!db) {
+      throw new Error("Database connection unavailable.");
     }
+
+    await db.insert(schema.applications).values({
+      name: v.name,
+      email: v.email,
+      phone: v.phone,
+      position: v.position,
+      employmentType: v.employmentType || null,
+      experience: v.experience || null,
+      credentials: v.credentials || null,
+      message: v.message || null,
+    });
+
     await sendLeadEmail(
       `New job application — ${v.position}`,
       [
@@ -58,6 +67,7 @@ export async function POST(req: Request) {
       ],
       v.email,
     );
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[apply] failed:", err);

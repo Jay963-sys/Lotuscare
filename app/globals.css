@@ -1073,8 +1073,11 @@
 
   /* Add the direct child selector (>) to beat the specificity of the text divs */
   .testimonial-secondary > .testimonial-secondary-image {
+    position: relative; /* contain the fill image so it can't cover the text */
+    overflow: hidden;
     min-height: 18rem;
-    padding: 0; /* Resets the padding applied by the sibling selector */
+    padding: 0;
+    border-radius: 1.25rem;
   }
   .testimonial-secondary p {
     max-width: 25rem;
@@ -1584,9 +1587,11 @@
 
   /* Lock the image into a responsive landscape box */
   .testimonial-secondary > .testimonial-secondary-image {
+    position: relative; /* REQUIRED for next/image fill */
+    overflow: hidden;
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9; /* Forces a wide, short box instead of taking up the screen */
+    aspect-ratio: 16 / 9;
     border-radius: 1.25rem;
   }
 

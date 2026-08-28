@@ -8,6 +8,7 @@ const Schema = z.object({
   email: z.string().email().max(200),
   phone: z.string().max(40).optional().or(z.literal("")),
   message: z.string().min(5).max(4000),
+  company: z.string().optional(), // Honeypot trap handled natively by Zod
 });
 
 export async function POST(req: Request) {
@@ -25,22 +26,37 @@ export async function POST(req: Request) {
       { status: 422 },
     );
   }
-  const { name, email, phone, message } = parsed.data;
+
+  const v = parsed.data;
+
+  // Silent success for bots that interact with the hidden field
+  if (v.company) {
+    return NextResponse.json({ ok: true });
+  }
 
   try {
-    if (db) {
-      await db.insert(schema.enquiries).values({ name, email, phone: phone || null, message });
+    if (!db) {
+      throw new Error("Database connection unavailable.");
     }
+
+    await db.insert(schema.enquiries).values({
+      name: v.name,
+      email: v.email,
+      phone: v.phone || null,
+      message: v.message,
+    });
+
     await sendLeadEmail(
       "New free-assessment enquiry",
       [
-        { label: "Name", value: name },
-        { label: "Email", value: email },
-        { label: "Phone", value: phone ?? "" },
-        { label: "Message", value: message },
+        { label: "Name", value: v.name },
+        { label: "Email", value: v.email },
+        { label: "Phone", value: v.phone ?? "" },
+        { label: "Message", value: v.message },
       ],
-      email,
+      v.email,
     );
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[contact] failed:", err);

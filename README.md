@@ -143,5 +143,4 @@ lotuscare
 │  └─ 1.jpg
 ├─ README.md
 └─ tsconfig.json
-
 ```
