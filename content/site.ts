@@ -144,6 +144,11 @@ export const careerTracks = [
   },
 ] as const;
 
+export const careerLinks = {
+  indeed: "https://www.indeed.com/cmp/Lotuscare-Services-LLC/jobs",
+  linkedin: "", // TODO: LotusCare LinkedIn jobs / company URL
+} as const;
+
 export const positionOptions = careerTracks.map((t) => t.title);
 
 export const employmentTypes = ["Full-time", "Part-time", "Per diem"] as const;
