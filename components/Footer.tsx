@@ -18,13 +18,18 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Image
-              src="/lotuscare-lockup-white.png"
-              alt={site.name}
-              width={662}
-              height={176}
-              className="h-10 w-auto"
-            />
+            <div className="flex items-center gap-3">
+              <Image
+                src="/lotuscare-badge-white.png"
+                alt={site.name}
+                width={1084}
+                height={1166}
+                className="h-14 w-auto"
+              />
+              <span className="font-display text-[1.4rem] font-semibold text-white">
+                LotusCare
+              </span>
+            </div>
             <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-sage-200/85">
               {site.tagline}
             </p>
@@ -59,10 +64,7 @@ export function Footer() {
                 { href: "/contact", label: "Contact" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sage-100/85 hover:text-white"
-                  >
+                  <Link href={l.href} className="text-sage-100/85 hover:text-white">
                     {l.label}
                   </Link>
                 </li>

@@ -39,7 +39,6 @@ export function Header() {
     };
   }, [open]);
 
-  // Release the scroll lock + close when we reach desktop.
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
     const onChange = (e: MediaQueryListEvent) => e.matches && setOpen(false);
@@ -47,7 +46,6 @@ export function Header() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  // Escape closes the menu.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -59,35 +57,33 @@ export function Header() {
     <>
       <header
         className={cn(
-          /* 1. Added border-b to the base classes so the layout never jumps */
-          "sticky top-0 z-50 transition-all duration-300 border-b",
+          "sticky top-0 z-50 border-b transition-all duration-300",
           scrolled
             ? "border-pine-900/10 bg-ivory/92 shadow-[0_8px_30px_rgba(18,48,41,0.05)] backdrop-blur-xl"
-            : /* 2. Added border-transparent to the default unscrolled state */
-              "border-transparent bg-ivory/75 backdrop-blur-md",
+            : "border-transparent bg-ivory/75 backdrop-blur-md",
         )}
       >
         <Container className="flex h-[4.75rem] items-center justify-between gap-5">
           <Link
             href="/"
-            className="flex items-center"
+            className="flex items-center gap-2.5"
             aria-label={`${site.name} home`}
             onClick={() => setOpen(false)}
           >
             <Image
-              src="/lotuscare-lockup.png"
-              alt={site.name}
-              width={662}
-              height={176}
+              src="/lotuscare-badge.png"
+              alt=""
+              width={1084}
+              height={1166}
               priority
-              className="h-9 w-auto"
+              className="h-11 w-auto"
             />
+            <span className="font-display text-[1.35rem] font-semibold tracking-tight text-pine-900">
+              LotusCare
+            </span>
           </Link>
 
-          <nav
-            className="hidden items-center gap-9 md:flex"
-            aria-label="Primary"
-          >
+          <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
             {nav.map((item) => {
               const active = isActive(item.href);
               return (
@@ -97,13 +93,10 @@ export function Header() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "group relative text-[0.92rem] font-medium transition-colors",
-                    active
-                      ? "text-pine-900"
-                      : "text-ink-700 hover:text-pine-900",
+                    active ? "text-pine-900" : "text-ink-700 hover:text-pine-900",
                   )}
                 >
                   {item.label}
-                  {/* active-page dot (also previews on hover) */}
                   <span
                     className={cn(
                       "absolute -bottom-2.5 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-blush-600 transition-all duration-300",
@@ -166,10 +159,8 @@ export function Header() {
         </Container>
       </header>
 
-      {/* ---- Full-bleed mobile overlay ----
-          Kept OUTSIDE <header>: the header's backdrop-filter would otherwise
-          make this fixed element resolve against the header box (collapsing it)
-          instead of the viewport. */}
+      {/* Full-bleed mobile overlay — kept OUTSIDE <header> so the header's
+          backdrop-filter doesn't trap this fixed element. */}
       <div
         id="mobile-nav"
         className={cn(
@@ -180,7 +171,6 @@ export function Header() {
             : "pointer-events-none -translate-y-2 opacity-0",
         )}
       >
-        {/* soft brand wash */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -205,9 +195,7 @@ export function Header() {
                     <span
                       className={cn(
                         "h-2 w-2 rounded-full transition-all duration-300",
-                        active
-                          ? "scale-100 bg-blush-600"
-                          : "scale-0 bg-transparent",
+                        active ? "scale-100 bg-blush-600" : "scale-0 bg-transparent",
                       )}
                     />
                     <span
@@ -239,10 +227,7 @@ export function Header() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
               Talk to our team
             </p>
-            <a
-              href={site.phoneHref}
-              className="font-display text-2xl text-pine-900"
-            >
+            <a href={site.phoneHref} className="font-display text-2xl text-pine-900">
               {site.phone}
             </a>
             <div className="mt-5">
@@ -250,9 +235,7 @@ export function Header() {
                 {site.primaryCta.label}
               </Button>
             </div>
-            <p className="mt-8 text-sm italic text-ink-500">
-              …care beyond measure.
-            </p>
+            <p className="mt-8 text-sm italic text-ink-500">…care beyond measure.</p>
           </div>
         </Container>
       </div>
