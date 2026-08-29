@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
 
-const fraunces = Fraunces({
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
-  axes: ["opsz"],
 });
-
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-hanken",
@@ -56,22 +54,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${hanken.variable}`}>
+    <html lang="en" className={`${display.variable} ${hanken.variable}`}>
+           {" "}
       <body>
+               {" "}
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-pine-900 focus:px-5 focus:py-3 focus:text-white"
         >
-          Skip to content
+                    Skip to content        {" "}
         </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+                <Header />        <main id="main">{children}</main>
+                <Footer />       {" "}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+             {" "}
       </body>
+         {" "}
     </html>
   );
 }
