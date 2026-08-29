@@ -28,7 +28,7 @@ export default function CareersPage() {
         <Container className="max-w-3xl">
           <Reveal>
             <p className="mission-quote text-[clamp(1.4rem,2.6vw,2rem)]">
-              We hire for kindness first{" "}
+              We hire for kindness first.{" "}
               <em>the skills, we&apos;ll grow together.</em>
             </p>
           </Reveal>
