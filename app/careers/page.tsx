@@ -28,7 +28,7 @@ export default function CareersPage() {
         <Container className="max-w-3xl">
           <Reveal>
             <p className="mission-quote text-[clamp(1.4rem,2.6vw,2rem)]">
-              We hire for kindness first —{" "}
+              We hire for kindness first{" "}
               <em>the skills, we&apos;ll grow together.</em>
             </p>
           </Reveal>
@@ -50,7 +50,7 @@ export default function CareersPage() {
         <Container className="max-w-3xl">
           <Reveal>
             <p className="eyebrow">Ways to apply</p>
-            <h2 className="display-md mt-4">Three ways in.</h2>
+            <h2 className="display-md mt-4">Two ways in.</h2>
           </Reveal>
 
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
