@@ -4,12 +4,14 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
+import { ChatWidget } from "@/components/ChatWidget";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-bricolage", // Fixed variable name
   display: "swap",
 });
+
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-hanken",
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": "MedicalBusiness", // Updated to reflect home health care
   "@id": "https://lotuscarellc.com",
   name: site.legalName,
   description: site.description,
@@ -55,24 +57,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${hanken.variable}`}>
-           {" "}
       <body>
-               {" "}
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-pine-900 focus:px-5 focus:py-3 focus:text-white"
         >
-                    Skip to content        {" "}
+          Skip to content
         </a>
-                <Header />        <main id="main">{children}</main>
-                <Footer />       {" "}
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-             {" "}
+        <ChatWidget />
       </body>
-         {" "}
     </html>
   );
 }

@@ -11,7 +11,7 @@ export function AssessmentBand() {
       <div className="assessment-inner">
         <div className="assessment-image">
           <Image
-            src="/10.jpg"
+            src="/17.jpg"
             alt="LotusCare caregiver spending time with a client"
             fill
             sizes="100vw"

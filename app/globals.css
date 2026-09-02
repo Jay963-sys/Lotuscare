@@ -1647,3 +1647,893 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ============================================================
+   LOTUSCARE HOMEPAGE ART-DIRECTION PASS
+   These overrides intentionally simplify the original decorative
+   treatment and create a stronger, more recognizable brand system.
+   ============================================================ */
+
+.lotus-hero {
+  background: var(--color-ivory);
+}
+.lotus-hero-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      70% 80% at 88% 12%,
+      var(--color-blush-100),
+      transparent 62%
+    ),
+    radial-gradient(55% 65% at 0% 90%, var(--color-sage-100), transparent 65%);
+  pointer-events: none;
+}
+.lotus-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 7rem);
+  min-height: calc(100vh - 4.75rem);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+.lotus-hero-copy {
+  padding-block: 2rem;
+}
+.lotus-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--color-pine-700);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.lotus-mark {
+  display: inline-flex;
+  width: 2.25rem;
+  height: 1.7rem;
+  color: var(--color-blush-600);
+}
+.lotus-mark svg {
+  width: 100%;
+  height: 100%;
+}
+.lotus-mark-light {
+  color: var(--color-blush-200);
+}
+.lotus-hero h1 {
+  max-width: 9.5ch;
+  margin-top: 1.6rem;
+  font-size: clamp(4rem, 7.5vw, 7.2rem);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+.lotus-hero h1 em {
+  color: var(--color-blush-600);
+  font-style: italic;
+  font-weight: 400;
+}
+.lotus-hero-lede {
+  max-width: 35rem;
+  margin-top: 2rem;
+  font-size: clamp(1.08rem, 1.4vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--color-ink-700);
+}
+.lotus-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+.lotus-text-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.35rem 0.25rem;
+  color: var(--color-pine-800);
+}
+.lotus-text-cta span {
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-500);
+}
+.lotus-text-cta strong {
+  font-size: 0.98rem;
+}
+.lotus-proof-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 31rem;
+  margin-top: 2.4rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(18, 48, 41, 0.14);
+}
+.lotus-proof-number {
+  display: flex;
+  width: 3.9rem;
+  height: 3.9rem;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-pine-900);
+  color: #fff;
+}
+.lotus-proof-number strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.lotus-proof-number span {
+  margin-top: 0.2rem;
+  font-size: 0.43rem;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+.lotus-proof-row > div:last-child strong,
+.lotus-proof-row > div:last-child span {
+  display: block;
+}
+.lotus-proof-row > div:last-child strong {
+  font-size: 0.88rem;
+  color: var(--color-pine-900);
+}
+.lotus-proof-row > div:last-child span {
+  margin-top: 0.15rem;
+  font-size: 0.74rem;
+  color: var(--color-ink-500);
+}
+.lotus-hero-media {
+  position: relative;
+  min-height: clamp(38rem, 67vw, 52rem);
+  overflow: hidden;
+  border-radius: 13rem 13rem 1.75rem 1.75rem;
+  background: var(--color-sage-200);
+  box-shadow: 0 2.5rem 6rem rgba(18, 48, 41, 0.15);
+}
+.lotus-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 48, 41, 0) 42%,
+    rgba(18, 48, 41, 0.7) 100%
+  );
+  pointer-events: none;
+}
+.lotus-hero-media-copy {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  z-index: 2;
+  color: #fff;
+}
+.lotus-hero-media-copy span {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.lotus-hero-media-copy strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 1.02;
+  font-weight: 500;
+}
+.lotus-hero-home-note {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 18rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  background: rgba(251, 247, 241, 0.94);
+  box-shadow: 0 1.2rem 3rem rgba(18, 48, 41, 0.12);
+  backdrop-filter: blur(10px);
+}
+.lotus-hero-home-note .lotus-mark {
+  width: 2rem;
+}
+.lotus-hero-home-note strong,
+.lotus-hero-home-note span {
+  display: block;
+}
+.lotus-hero-home-note strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1.15;
+  color: var(--color-pine-900);
+}
+.lotus-hero-home-note span {
+  margin-top: 0.25rem;
+  font-size: 0.68rem;
+  color: var(--color-ink-500);
+}
+.lotus-hero-strip {
+  border-top: 1px solid rgba(18, 48, 41, 0.1);
+}
+.lotus-hero-strip div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.05rem;
+  color: var(--color-ink-500);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.lotus-hero-strip i {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--color-blush-500);
+}
+
+.lotus-story {
+  background: var(--color-ivory);
+}
+.lotus-story-intro {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 2rem;
+  align-items: start;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+.lotus-story-intro h2 {
+  max-width: 12ch;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.93;
+  letter-spacing: -0.045em;
+}
+.lotus-story-intro h2 em {
+  color: var(--color-blush-600);
+  font-style: italic;
+  font-weight: 400;
+}
+.lotus-story-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(2.5rem, 7vw, 8rem);
+  align-items: center;
+}
+.lotus-story-photo {
+  position: relative;
+  min-height: clamp(30rem, 48vw, 44rem);
+  overflow: hidden;
+  border-radius: 1.5rem 9rem 1.5rem 1.5rem;
+  box-shadow: 0 2rem 5rem rgba(18, 48, 41, 0.11);
+}
+.lotus-photo-tag {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 2;
+  padding: 0.65rem 0.8rem;
+  background: var(--color-ivory);
+  color: var(--color-ink-500);
+  font-size: 0.57rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+.lotus-story-copy {
+  max-width: 31rem;
+}
+.lotus-large-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  line-height: 1.02;
+  color: var(--color-pine-900);
+}
+.lotus-story-copy > p + p {
+  margin-top: 1.7rem;
+  color: var(--color-ink-700);
+  line-height: 1.75;
+}
+.lotus-story-copy .editorial-link {
+  margin-top: 1.8rem;
+}
+
+.lotus-services {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background: var(--color-cream);
+}
+.lotus-services-word {
+  position: absolute;
+  right: -4rem;
+  top: 5rem;
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 25vw, 25rem);
+  line-height: 0.65;
+  font-style: italic;
+  color: rgba(18, 48, 41, 0.035);
+  pointer-events: none;
+}
+.lotus-services-heading {
+  max-width: 52rem;
+}
+.lotus-services-heading > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lotus-services-heading h2 {
+  margin-top: 1.1rem;
+  font-size: clamp(3rem, 5.8vw, 5.3rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+.lotus-services-heading h2 em {
+  color: var(--color-blush-600);
+  font-style: italic;
+  font-weight: 400;
+}
+.lotus-services-heading > p {
+  max-width: 39rem;
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-ink-700);
+}
+.lotus-service-block {
+  margin-top: 5rem;
+}
+.lotus-service-block-home {
+  margin-top: 8rem;
+}
+.lotus-service-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: end;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(18, 48, 41, 0.2);
+}
+.lotus-service-head > span {
+  color: var(--color-blush-600);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.lotus-service-head h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.lotus-service-head p {
+  margin-top: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-500);
+}
+.lotus-service-head > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--color-pine-800);
+}
+.lotus-service-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.82fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-top: 2rem;
+  align-items: start;
+}
+.lotus-service-layout-reverse {
+  grid-template-columns: minmax(20rem, 0.82fr) minmax(0, 1fr);
+}
+.lotus-service-list .srow {
+  padding-block: 1.35rem;
+}
+.lotus-service-list .srow:hover {
+  padding-inline: 0.9rem;
+}
+.lotus-service-photo {
+  position: relative;
+  min-height: 32rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--color-sage-200);
+}
+.lotus-service-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 48, 41, 0) 40%,
+    rgba(18, 48, 41, 0.78)
+  );
+}
+.lotus-service-photo > div {
+  position: absolute;
+  left: 1.6rem;
+  bottom: 1.6rem;
+  z-index: 2;
+  color: #fff;
+}
+.lotus-service-photo span {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-blush-200);
+}
+.lotus-service-photo strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.3vw, 3.4rem);
+  line-height: 0.98;
+}
+.lotus-service-photo-dark {
+  background: var(--color-pine-900);
+}
+.lotus-services-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(18, 48, 41, 0.15);
+}
+.lotus-services-footer p {
+  margin: 0;
+  color: var(--color-ink-500);
+}
+
+.lotus-philosophy {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background: var(--color-pine-900);
+  color: #fff;
+}
+.lotus-philosophy-grid {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: start;
+}
+.lotus-philosophy-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+  color: var(--color-blush-200);
+}
+.lotus-philosophy-mark .lotus-mark {
+  width: 3.2rem;
+  height: 2.2rem;
+}
+.lotus-philosophy-mark span {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+}
+.lotus-philosophy .eyebrow {
+  color: var(--color-blush-200);
+}
+.lotus-philosophy h2 {
+  margin-top: 1rem;
+  max-width: 12ch;
+  color: #fff;
+  font-size: clamp(3rem, 5.5vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+.lotus-philosophy h2 em {
+  color: var(--color-blush-200);
+  font-style: italic;
+  font-weight: 400;
+}
+.lotus-philosophy-grid > div:last-child > p:last-child {
+  max-width: 39rem;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.lotus-process-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 28rem;
+  margin-top: 4rem;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: var(--color-pine-900);
+}
+.lotus-process-feature > div:first-child {
+  position: relative;
+  min-height: 28rem;
+}
+.lotus-process-feature > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+.lotus-process-feature h3 {
+  margin-top: 0.8rem;
+  color: #fff;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  line-height: 0.94;
+}
+.lotus-process-feature p {
+  max-width: 29rem;
+  margin-top: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.75;
+}
+.lotus-process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 5rem;
+}
+.lotus-process-step {
+  padding: 0 1.7rem 0 0;
+}
+.lotus-process-step + .lotus-process-step {
+  padding-left: 1.7rem;
+  border-left: 1px solid rgba(18, 48, 41, 0.13);
+}
+.lotus-process-step > span {
+  display: flex;
+  width: 3.4rem;
+  height: 3.4rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+  border-radius: 50%;
+  background: var(--color-pine-900);
+  color: #fff;
+  font-family: var(--font-display);
+}
+.lotus-process-step:first-child > span {
+  background: var(--color-blush-600);
+}
+.lotus-process-step > p:first-of-type {
+  margin-bottom: 0.55rem;
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-blush-700);
+}
+.lotus-process-step h3 {
+  font-size: clamp(1.45rem, 2vw, 2rem);
+}
+.lotus-process-step > p:last-child {
+  margin-top: 0.75rem;
+  color: var(--color-ink-700);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.lotus-testimonials {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background: var(--color-pine-900);
+  color: #fff;
+}
+.lotus-testimonial-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: end;
+}
+.lotus-testimonial-intro {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.lotus-testimonial-intro span {
+  color: var(--color-blush-200);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+.lotus-testimonial-intro p {
+  margin: 0;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.lotus-testimonial-kicker {
+  margin: 0;
+  justify-self: end;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 0.95;
+  text-align: right;
+}
+.lotus-testimonial-kicker em {
+  color: var(--color-blush-200);
+  font-weight: 400;
+}
+.lotus-testimonial-feature {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: center;
+  margin-top: 4rem;
+}
+.lotus-testimonial-feature > div:first-child {
+  position: relative;
+  min-height: 36rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+.lotus-testimonial-feature > div:last-child {
+  max-width: 45rem;
+}
+.lotus-quote-mark {
+  color: var(--color-blush-200);
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 0.6;
+}
+.lotus-testimonial-feature blockquote {
+  margin-top: 1.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.3vw, 4.6rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+}
+.lotus-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 2.2rem;
+}
+.lotus-author > span {
+  width: 2.2rem;
+  height: 1px;
+  background: var(--color-blush-500);
+}
+.lotus-author strong,
+.lotus-author small {
+  display: block;
+}
+.lotus-author strong {
+  font-size: 0.85rem;
+}
+.lotus-author small {
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.7rem;
+}
+.lotus-testimonial-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.lotus-testimonial-row > div:first-child {
+  position: relative;
+  min-height: 13rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.lotus-testimonial-row > div:not(:first-child) {
+  padding: 1rem 0;
+}
+.lotus-testimonial-row p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+.lotus-testimonial-row span {
+  display: block;
+  margin-top: 1.3rem;
+  color: var(--color-blush-200);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lotus-careers {
+  background: var(--color-ivory);
+}
+.lotus-careers-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: center;
+}
+.lotus-careers-photo {
+  position: relative;
+  min-height: 35rem;
+  overflow: hidden;
+  border-radius: 1.5rem 8rem 1.5rem 1.5rem;
+}
+.lotus-careers-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(18, 48, 41, 0.7));
+}
+.lotus-careers-photo span {
+  position: absolute;
+  left: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 2;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+.lotus-careers h2 em {
+  color: var(--color-blush-600);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media (max-width: 1023px) {
+  .lotus-hero-grid,
+  .lotus-story-grid,
+  .lotus-philosophy-grid,
+  .lotus-careers-grid {
+    grid-template-columns: 1fr;
+  }
+  .lotus-hero-grid {
+    min-height: auto;
+  }
+  .lotus-hero-media {
+    min-height: 42rem;
+  }
+  .lotus-story-intro {
+    grid-template-columns: 1fr;
+  }
+  .lotus-story-intro h2 {
+    max-width: 11ch;
+  }
+  .lotus-service-layout,
+  .lotus-service-layout-reverse {
+    grid-template-columns: 1fr;
+  }
+  .lotus-service-layout-reverse .lotus-service-photo {
+    order: -1;
+  }
+  .lotus-process-steps {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+  }
+  .lotus-testimonial-feature {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+  .lotus-careers-photo {
+    min-height: 30rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .lotus-hero-grid {
+    padding-block: 2.5rem 3.5rem;
+    gap: 2.5rem;
+  }
+  .lotus-hero h1 {
+    font-size: clamp(3.45rem, 17vw, 5rem);
+  }
+  .lotus-hero-lede {
+    font-size: 1rem;
+  }
+  .lotus-hero-media {
+    min-height: 31rem;
+    border-radius: 8rem 8rem 1.25rem 1.25rem;
+  }
+  .lotus-hero-home-note {
+    right: 0.75rem;
+    top: 0.75rem;
+    max-width: 16rem;
+    padding: 0.8rem;
+  }
+  .lotus-hero-media-copy {
+    left: 1.2rem;
+    bottom: 1.2rem;
+  }
+  .lotus-hero-strip div {
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.55rem;
+  }
+  .lotus-story-intro h2,
+  .lotus-services-heading h2,
+  .lotus-philosophy h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+  .lotus-story-photo {
+    min-height: 27rem;
+    border-radius: 1.25rem 6rem 1.25rem 1.25rem;
+  }
+  .lotus-large-quote {
+    font-size: 2rem;
+  }
+  .lotus-service-block,
+  .lotus-service-block-home {
+    margin-top: 4rem;
+  }
+  .lotus-service-head {
+    grid-template-columns: auto 1fr;
+  }
+  .lotus-service-head > a {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0.35rem;
+  }
+  .lotus-service-photo {
+    min-height: 25rem;
+  }
+  .lotus-services-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .lotus-philosophy-grid {
+    gap: 3rem;
+  }
+  .lotus-process-feature {
+    grid-template-columns: 1fr;
+  }
+  .lotus-process-feature > div:first-child {
+    min-height: 20rem;
+  }
+  .lotus-process-steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .lotus-process-step,
+  .lotus-process-step + .lotus-process-step {
+    padding: 0;
+    border: 0;
+  }
+  .lotus-testimonial-top {
+    grid-template-columns: 1fr;
+  }
+  .lotus-testimonial-kicker {
+    justify-self: start;
+    text-align: left;
+  }
+  .lotus-testimonial-feature {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .lotus-testimonial-feature > div:first-child {
+    min-height: 29rem;
+  }
+  .lotus-testimonial-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .lotus-testimonial-row > div:first-child {
+    min-height: 16rem;
+  }
+  .lotus-careers-photo {
+    min-height: 27rem;
+    border-radius: 1.25rem 6rem 1.25rem 1.25rem;
+  }
+}
