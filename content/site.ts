@@ -11,10 +11,9 @@ export const site = {
   description:
     "LotusCare provides skilled home nursing and non-medical home care across Chicago, helping your loved ones live safely and independently at home.",
 
-  // ✅ Confirmed by client
   phone: "(708) 967-2192",
   phoneHref: "tel:+17089672192",
-  fax: "(872) 266-0325", // confirm still valid
+  fax: "(872) 266-0325",
   email: "admin@lotuscarellc.com",
   address: {
     line1: "5901 N Cicero Ave, STE 410",
@@ -22,11 +21,11 @@ export const site = {
     state: "IL",
     zip: "60646",
   },
-  hours: "Mon–Fri, 9:00 AM – 5:00 PM",
+  hours: "Mon–Fri, 8:30 AM – 5:00 PM",
 
   socials: {
-    facebook: "",
-    instagram: "",
+    facebook: "https://www.facebook.com/lotuscareservices",
+    instagram: "https://www.instagram.com/lotuscareservices",
     linkedin: "",
   },
 
