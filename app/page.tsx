@@ -520,18 +520,19 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={220}>
-            <div
-              className="lotus-testimonial-row"
-              style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}
-            >
-              <div style={{ flex: "1 1 260px" }}>
+            {/* Relying strictly on the CSS grid, using Tailwind utility classes to tighten the top spacing */}
+            <div className="lotus-testimonial-row !mt-8 !pt-8">
+              {/* Empty column aligns the text on desktop, hides on mobile */}
+              <div className="hidden md:block"></div>
+
+              <div>
                 <p>
-                  “…nothing but good results from them. Keep up the good
-                  work.”
+                  “…nothing but good results from them. Keep up the good work.”
                 </p>
                 <span>Tara W. · Nurse, LotusCare</span>
               </div>
-              <div style={{ flex: "1 1 260px" }}>
+
+              <div>
                 <p>
                   “This is thee absolute best company I&apos;ve ever worked
                   for.”

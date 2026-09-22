@@ -2528,9 +2528,11 @@
   .lotus-testimonial-row {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
   }
-  .lotus-testimonial-row > div:first-child {
-    min-height: 16rem;
+  .lotus-testimonial-row > div:not(:first-child) {
+    padding: 0;
   }
   .lotus-careers-photo {
     min-height: 27rem;
