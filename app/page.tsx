@@ -453,7 +453,7 @@ export default function HomePage() {
             <Reveal>
               <div className="lotus-testimonial-intro">
                 <span>04</span>
-                <p>Voices from our families</p>
+                <p>Voices from our clients &amp; team</p>
               </div>
             </Reveal>
             <Reveal delay={80}>
@@ -469,7 +469,7 @@ export default function HomePage() {
               <div>
                 <Image
                   src="/16.jpg"
-                  alt="LotusCare client and caregiver"
+                  alt="LotusCare nurse and client"
                   fill
                   sizes="(min-width: 1024px) 42vw, 100vw"
                   className="object-cover"
@@ -478,15 +478,15 @@ export default function HomePage() {
               <div>
                 <div className="lotus-quote-mark">“</div>
                 <blockquote>
-                  I fell in love with LotusCare right from the free assessment.
-                  They were so detailed about my mother&apos;s care and so kind
-                  about it.
+                  She clearly cares and is very friendly, extremely attentive
+                  and advocates for you. I couldn&apos;t be more pleased with
+                  the services i am receiving.
                 </blockquote>
                 <div className="lotus-author">
                   <span />
                   <div>
-                    <strong>Kate W.</strong>
-                    <small>Daughter of a LotusCare client</small>
+                    <strong>GERI</strong>
+                    <small>Parent of a LotusCare client</small>
                   </div>
                 </div>
               </div>
@@ -505,17 +505,38 @@ export default function HomePage() {
               </div>
               <div>
                 <p>
-                  “My caregiver was so passionate about me, and always ready to
-                  help in a professional way.”
+                  “He communicates clearly, manages feeds, medications, and ADLs
+                  with confidence.”
                 </p>
-                <span>Tami W. · Client</span>
+                <span>Beth N. · LotusCare client</span>
               </div>
               <div>
                 <p>
-                  “I&apos;ll keep telling anyone who cares to listen about the
-                  care they gave our family.”
+                  “Communication, meeting expectations and needs and kindness
+                  definitely stick out with them.”
                 </p>
-                <span>James C. · Family member</span>
+                <span>Brittany B. · LotusCare client</span>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={220}>
+            <div
+              className="lotus-testimonial-row"
+              style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}
+            >
+              <div style={{ flex: "1 1 260px" }}>
+                <p>
+                  “From day one, I felt appreciated and respected as part of the
+                  team.”
+                </p>
+                <span>Terry S. · Nurse, LotusCare</span>
+              </div>
+              <div style={{ flex: "1 1 260px" }}>
+                <p>
+                  “I love the company — my supervisors are amazing to work
+                  with.”
+                </p>
+                <span>Carmen D. · Caregiver, LotusCare</span>
               </div>
             </div>
           </Reveal>
