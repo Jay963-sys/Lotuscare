@@ -61,10 +61,13 @@ export function Footer() {
                 { href: "/about", label: "About us" },
                 { href: "/services", label: "Services" },
                 { href: "/careers", label: "Careers" },
-                { href: "/contact", label: "Contact" },
+                { href: "/contact", label: "Contact Us" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sage-100/85 hover:text-white">
+                  <Link
+                    href={l.href}
+                    className="text-sage-100/85 hover:text-white"
+                  >
                     {l.label}
                   </Link>
                 </li>

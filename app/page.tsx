@@ -224,8 +224,9 @@ export default function HomePage() {
               <em>One team behind both.</em>
             </h2>
             <p>
-              From a nurse after a hospital stay to a hand with the everyday,
-              the care is matched to the person not just the task.
+              From skilled nursing support following a hospital stay to a
+              helping hand with everyday needs, our care is tailored to the
+              person not simply the task.
             </p>
           </Reveal>
 

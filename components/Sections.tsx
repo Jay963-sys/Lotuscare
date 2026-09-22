@@ -54,7 +54,7 @@ export function AssessmentBand() {
 
               <div className="assessment-bottom">
                 <span />
-                <p>Chicago · Compassionate · Personal</p>
+                <p>Illinois · Compassionate · Personal</p>
                 <span />
               </div>
             </div>

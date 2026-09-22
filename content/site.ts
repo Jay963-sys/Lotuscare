@@ -71,12 +71,13 @@ export const services: Service[] = [
       "Post-operative support and wound care at home, so recovery happens somewhere restful instead of a hospital ward.",
   },
   {
-    slug: "private-duty-care",
-    title: "Private Duty Care",
+    slug: "homemaking",
+    title: "Homemaking",
     group: "Home Care",
     blurb:
-      "A dedicated caregiver, one-to-one: steady company and a helping hand through the day.",
+      "Meals, light housekeeping and errands that keep home safe, tidy and easy to live in.",
   },
+
   {
     slug: "personal-care",
     title: "Personal Care",
@@ -84,12 +85,13 @@ export const services: Service[] = [
     blurb:
       "Respectful help with bathing, dressing, mobility and daily living, handled with dignity.",
   },
+
   {
-    slug: "homemaking",
-    title: "Homemaking",
+    slug: "private-duty-care",
+    title: "Private Duty Care",
     group: "Home Care",
     blurb:
-      "Meals, light housekeeping and errands that keep home safe, tidy and easy to live in.",
+      "A dedicated caregiver, one-to-one: steady company and a helping hand through the day.",
   },
 ];
 

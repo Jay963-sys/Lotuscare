@@ -14,7 +14,7 @@ const nav = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export function Header() {
@@ -83,7 +83,10 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
+          <nav
+            className="hidden items-center gap-9 md:flex"
+            aria-label="Primary"
+          >
             {nav.map((item) => {
               const active = isActive(item.href);
               return (
@@ -93,7 +96,9 @@ export function Header() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "group relative text-[0.92rem] font-medium transition-colors",
-                    active ? "text-pine-900" : "text-ink-700 hover:text-pine-900",
+                    active
+                      ? "text-pine-900"
+                      : "text-ink-700 hover:text-pine-900",
                   )}
                 >
                   {item.label}
@@ -195,7 +200,9 @@ export function Header() {
                     <span
                       className={cn(
                         "h-2 w-2 rounded-full transition-all duration-300",
-                        active ? "scale-100 bg-blush-600" : "scale-0 bg-transparent",
+                        active
+                          ? "scale-100 bg-blush-600"
+                          : "scale-0 bg-transparent",
                       )}
                     />
                     <span
@@ -227,7 +234,10 @@ export function Header() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-ink-500">
               Talk to our team
             </p>
-            <a href={site.phoneHref} className="font-display text-2xl text-pine-900">
+            <a
+              href={site.phoneHref}
+              className="font-display text-2xl text-pine-900"
+            >
               {site.phone}
             </a>
             <div className="mt-5">
@@ -235,7 +245,9 @@ export function Header() {
                 {site.primaryCta.label}
               </Button>
             </div>
-            <p className="mt-8 text-sm italic text-ink-500">…care beyond measure.</p>
+            <p className="mt-8 text-sm italic text-ink-500">
+              …care beyond measure.
+            </p>
           </div>
         </Container>
       </div>
