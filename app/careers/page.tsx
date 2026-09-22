@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/Sections";
 import { LinkArrow } from "@/components/LinkArrow";
+import { ApplicationForm } from "@/components/ApplicationForm";
 import { careerTracks, careerLinks } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -23,29 +24,11 @@ export default function CareersPage() {
         lede="Compassionate people make LotusCare. If that's you, we'd love to hear from you — apply anytime, even when a specific role isn't posted."
       />
 
-      {/* Primary apply CTA → client's Google application form */}
+      {/* Primary apply CTA → in-page application form, emailed to the team */}
       <section className="py-16 lg:py-20">
         <Container className="max-w-3xl">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[2rem] bg-pine-800 px-8 py-12 text-center text-white sm:px-12">
-              <p className="eyebrow text-blush-200">
-                Careers with LotusCare Services
-              </p>
-              <h2 className="display-md mt-4 text-white">Apply now.</h2>
-              <p className="lede mx-auto mt-4 max-w-xl text-sage-200">
-                We're always hiring nurses and caregivers. Fill out our quick
-                application and we'll be in touch.
-              </p>
-              <a
-                href={careerLinks.applyForm}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-pine-900 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-0.5 hover:bg-cream"
-              >
-                Apply here
-                <LinkArrow />
-              </a>
-            </div>
+            <ApplicationForm siteName="LotusCare Services" />
           </Reveal>
 
           {/* Secondary: browse listed roles */}
@@ -89,7 +72,7 @@ export default function CareersPage() {
           <Reveal>
             <p className="mission-quote text-[clamp(1.4rem,2.6vw,2rem)]">
               We hire for kindness first —{" "}
-              <em>the skills, we'll grow together.</em>
+              <em>the skills, we&apos;ll grow together.</em>
             </p>
           </Reveal>
           <Reveal delay={80}>
