@@ -526,17 +526,17 @@ export default function HomePage() {
             >
               <div style={{ flex: "1 1 260px" }}>
                 <p>
-                  “From day one, I felt appreciated and respected as part of the
-                  team.”
+                  “…nothing but good results from them. Keep up the good
+                  work.”
                 </p>
-                <span>Terry S. · Nurse, LotusCare</span>
+                <span>Tara W. · Nurse, LotusCare</span>
               </div>
               <div style={{ flex: "1 1 260px" }}>
                 <p>
-                  “I love the company — my supervisors are amazing to work
-                  with.”
+                  “This is thee absolute best company I&apos;ve ever worked
+                  for.”
                 </p>
-                <span>Carmen D. · Caregiver, LotusCare</span>
+                <span>Empress R. · Caregiver, LotusCare</span>
               </div>
             </div>
           </Reveal>
