@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 const apiKey = process.env.RESEND_API_KEY;
 const resend = apiKey ? new Resend(apiKey) : null;
 
-const FROM = process.env.FROM_EMAIL ?? `${site.name} <onboarding@resend.dev>`;
+const FROM = process.env.FROM_EMAIL ?? `${site.name} <${site.email}>`;
 const INBOX = process.env.LEADS_INBOX ?? site.email;
 
 type Field = { label: string; value: string };
